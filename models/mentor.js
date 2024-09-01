@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const mentorSchema = new mongoose.Schema({
     name: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    students: [{ type: [mongoose.Schema.Types.ObjectId], ref: 'students'}]
+    students: { type: [Number], default: [] },
+    id: {type: Number, required: true}
 });
 
 // create mentor model and export it

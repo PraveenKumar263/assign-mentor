@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 const studentSchema = mongoose.Schema({
     name: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    currentMentor: {type: mongoose.Schema.Types.ObjectId, ref: 'Mentor'},
-    prevMentor: {type: mongoose.Schema.Types.ObjectId, ref: 'Mentor'},
+    currentMentor: {type: Number, default: null},
+    prevMentor: {type: Number, default: null},
+    id: {type: Number, required: true}
 });
 
 // create model and export
